@@ -1,0 +1,90 @@
+// .parent{
+//     border: 2px solid white;
+//     height: 100vh;
+//     display: flex;
+// }
+
+.child{
+    height: 90%;
+    width: 50%;
+    margin-top: 70px;
+    border: 1px solid rgb(227, 224, 224);
+    border-radius: 10px;
+    padding: 25px;
+    
+}
+.child1{
+     width: 60%;
+    
+}
+
+.fname{
+    margin-left: 35px;
+}
+.lname{
+    margin-left: 10px;
+}
+.uname{
+    width: 250px;
+}
+.buttondiv{
+    margin-top: 20px;
+    margin-left: -12px;
+    width: 92%;
+    
+}
+
+.imgdiv > p{
+    text-align: center;
+    font-size: 17px;
+    width: 70%;
+    margin-top: 20px;
+    color: rgb(134, 129, 129);
+}
+
+
+// .main{
+//     display: flex;
+//     justify-content: space-between;
+//     flex-direction: row;
+//     margin-top: 70px;
+//     height: 90%;
+//     width: 50%;
+//     border: 1px solid rgb(228, 216, 216);
+//     padding: 60px 40px;
+//     border-radius: 6px;
+// }
+
+// .example-button-row{
+//     display: flex;
+//     flex-direction: row;
+//     margin-top: 20px;
+//     justify-content: space-between;
+//     width: 92%;
+// }
+// input{
+//     padding: 0px;
+// }
+// .name{
+//     display: flex;
+// }
+// .second-name{
+//     margin-left: 10px;
+// }
+// img{
+//     width: 200px;
+//     height: auto;
+// }
+// .form-register{
+//     width: 60%;
+// }
+// .image-block{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+// #sign-in-button{
+//     margin-left: -13px;
+// }
