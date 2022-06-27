@@ -1,13 +1,16 @@
 
-.parent{
-    height: 100%;
-}
+// .parent{
+//     height: 100%;
+// }
 .child{
-    height: 80%;
+    height: 90%;
     width: 30%;
     border: 1px solid rgb(196, 189, 189);
     border-radius: 6px;
    
+}
+.headtext{
+    margin-top: 40px;
 }
 .mat-form-field{
     width: 350px;
@@ -18,6 +21,10 @@
 .forminput{
     width: 100%;
     height: 20%;
+}
+.learn{
+    margin-left: -15px;
+    margin-top: -10px;
 }
 #forgetbutton{
     display: flex;
@@ -31,5 +38,6 @@
     height: 100px;
 }
 #createbutton{
-    margin-left: -13px;
+    margin-left: -15px;
+    margin-bottom: 5px;
 }
