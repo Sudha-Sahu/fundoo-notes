@@ -1,30 +1,41 @@
 <div class="parent" fxLayout="row" fxLayoutAlign="center center" >
     <div class="child" fxLayout="row" fxLayoutAlign="space-around center">
         <div class="child1">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
             <div>
-                <h2>Fundoo</h2>
-                <h2>Create your Fundoo Account</h2>
+                <h1>
+                    <font color="blue">F</font>
+                    <font color="red">u</font>
+                    <font color="yellow">n</font>
+                    <font color="blue">d</font>
+                    <font color="green">o</font>
+                    <font color="red">o</font>
+                </h1>
+                <h1>Create your Fundoo Account</h1>
             </div>
             <div fxLayout="row" fxLayoutAlign="space-around center">
                 <div class="fname">
                     <mat-form-field appearance="outline">
                         <mat-label>First name</mat-label>
-                        <input matInput placeholder="">
+                        <input matInput placeholder="" formControlName="fname">
+                        <mat-error>Enter first name</mat-error>
                     </mat-form-field>
                 </div>
                 <div class="lname">
                     <mat-form-field appearance="outline">
                         <mat-label>Last name</mat-label>
-                        <input matInput placeholder="">
+                        <input matInput placeholder="" formControlName="lname">
+                        <mat-error>Enter last name</mat-error>
                     </mat-form-field>    
                 </div>
                 
             </div>
             <div class="uname">
                 <mat-form-field appearance="outline">
-                    <mat-label>Username</mat-label>
-                    <input matInput placeholder="username">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="username" formControlName="email">
                     <mat-hint>You can use letters, numbers & periods</mat-hint>
+                    <mat-error>Enter valid email</mat-error>
                 </mat-form-field>
             </div>
             <div class="buttondiv">
@@ -34,21 +45,20 @@
                 <div class="fname">
                     <mat-form-field appearance="outline">
                         <mat-label>Password</mat-label>
-                        <input matInput placeholder="">
-                        <mat-hint>Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint>
+                        <input matInput placeholder="" formControlName="pass">
+                        <mat-error>Enter a password</mat-error>
+                        <!-- <mat-hint>Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint> -->
                     </mat-form-field>
                 </div>
-                
                 <div class="lname">
                     <mat-form-field appearance="outline">
                         <mat-label>Confirm</mat-label>
-                        <input matInput placeholder="">
-                        
-                    </mat-form-field>  
-                      
-                </div>
-                
+                        <input matInput placeholder="" formControlName="cpass">
+                        <mat-error>Retype your entered password</mat-error>
+                    </mat-form-field>
+                </div>  
             </div>
+            <mat-hint class="passtext">Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint>
             <div>
                 <!-- <form>
                     <input type="checkbox" id="Password" name="Password" value="Password">
@@ -57,9 +67,10 @@
                 <mat-checkbox>Show Password</mat-checkbox>
             </div>
             <div class="buttondiv"  fxLayout="row" fxLayoutAlign="space-between center" >
-                <button mat-button color="primary">Sign in instead</button>
-                <button mat-raised-button color="primary">Next</button>
+                <button mat-button color="primary" routerLink="/signin">Sign in instead</button>
+                <button mat-raised-button color="primary" class="next">Next</button>
             </div>
+        </form>
         </div>
         <div class="imgdiv" fxLayout="column" fxLayoutAlign="space-between center" >
             <img style="width: 200px; height: 200px;" src="../../../assets/account.svg">

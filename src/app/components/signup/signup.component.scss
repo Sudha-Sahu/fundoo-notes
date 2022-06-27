@@ -1,11 +1,10 @@
 // .parent{
 //     border: 2px solid white;
 //     height: 100vh;
-//     display: flex;
 // }
 
 .child{
-    height: 90%;
+    height: 50%;
     width: 50%;
     margin-top: 70px;
     border: 1px solid rgb(227, 224, 224);
@@ -24,8 +23,8 @@
 .lname{
     margin-left: 10px;
 }
-.uname{
-    width: 250px;
+.uname .mat-form-field{
+    width: 410px;
 }
 .buttondiv{
     margin-top: 20px;
@@ -40,4 +39,12 @@
     width: 70%;
     margin-top: 20px;
     color: rgb(134, 129, 129);
+}
+.passtext{
+        margin-top: 50px;
+        margin-left: 10px;
+        font-size: 11px;
+}
+.next{
+    margin-right: -77px;
 }
