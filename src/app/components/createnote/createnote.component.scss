@@ -1,0 +1,72 @@
+.notebox{
+    border: 5px solid rgb(248, 250, 250);
+ 
+}
+.outline{
+    width: 100vw;
+}
+// .example-container {
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     background: #eee;
+//   }
+
+.form{
+    background-color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(27, 26, 26, 0.667);
+    width: 40%;
+    margin-top: 25px;
+}
+.form-element{
+    width: 100%;
+    margin: 5px;
+    margin-left: 32px;
+}
+.iform{
+    width: 80%;
+}
+// .iform > div{
+//     margin-top: -10px;
+// }
+.iform > input{
+    font-family: 'Open Sans', sans-serif;
+    background: transparent;
+    font-size: medium;
+    width: 90%;
+    height: 40px;
+    border: none;
+    outline: none;
+}
+.iform > input:active{
+    border: none;
+    outline: none;
+}
+
+// .takenote{
+//     font-size: small;
+// }
+.iconbar{
+    width: 95%;
+}
+.iconbar > button{
+    font-family: 'Open Sans', sans-serif;
+    width: 80px;
+    height: 35px;
+}
+.icontainer{
+    margin-top: 3px;
+    width: 70%;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.inote{
+    width: 20px;
+    height: 25px;
+    margin-right: 15px;
+}

@@ -1,0 +1,24 @@
+<div fxLayoutAlign="center center">
+    <div class="form" fxLayout="column" fxLayoutAlign="center center">
+        <div class="form-element">
+            <div class="iform" *ngIf="showNote">
+                <input type="text" placeholder="Title">
+            </div>
+            
+            <div class="iform" >
+                <input class="takenote" type="text" placeholder="Take a note..." (click)="show()">
+                <div fxLayout="row" fxLayoutAlign="end start" *ngIf="showIcon">
+                    <img class="inote" src="../../../assets/check_box_FILL0_wght400_GRAD0_opsz48.svg">
+                    <img class="inote" src="../../../assets/brush_FILL0_wght400_GRAD0_opsz48.svg">
+                    <img class="" src="../../../assets/image_black_24dp.svg">
+                </div>
+            </div>
+            <div class="iconbar" fxLayout="row" fxLayoutAlign="space-between center" *ngIf="showNote" >
+                <div class="icontainer">
+                    <app-icons></app-icons>
+                </div>
+                <button mat-button (click)="close()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
