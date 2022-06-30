@@ -1,0 +1,27 @@
+<div>
+    <div class="form" fxLayout="column" fxLayoutAlign="center center" *ngFor="let note of childMessage">
+        <div class="getallnote" fxLayout="row" fxLayoutAlign="center center">
+            <div class="form-element">
+                <div class="iform">
+                    <input type="text" placeholder="{{note.title}}">
+                    <div class="pinicon">
+                        <!-- <img src="../../../assets/push_pin_.svg"> -->
+                    </div>
+                    <input class="takenote" type="text" placeholder="{{note.description}}">
+                    
+                </div>
+                <div class="iconbar" fxLayout="row" fxLayoutAlign="space-between end">
+                    <div class="icontainer">
+                        <img class="icons" src="../../../assets/add_alert_black_24dp.svg">
+                        <img class="icons" src="../../../assets/person_add_alt_black_24dp.svg">
+                        <img class="icons" src="../../../assets/palette_black_24dp.svg">
+                        <img class="icons" src="../../../assets/image_black_24dp.svg">
+                        <img class="icons" src="../../../assets/archive_black_24dp.svg">
+                        <img class="icons" src="../../../assets/more_vert_black_24dp.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
