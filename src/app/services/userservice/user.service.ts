@@ -6,8 +6,11 @@ import { HttpService } from '../httpservice/http.service';
   providedIn: 'root'
 })
 export class UserService {
+  token:any;
 
-  constructor(private http:HttpService) { }
+  constructor(private http:HttpService) { 
+    // localStorage.setItem('token', this.token)
+  }
 
   register(data:any){
     console.log(data);
