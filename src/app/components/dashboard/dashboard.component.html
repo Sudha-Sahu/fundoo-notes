@@ -1,4 +1,4 @@
-<div>
+<div class="main">
 <div fxLayout="column" fxLayoutAlign="start start">
   <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
     <mat-toolbar color="rgba(255,255,255,1)" class="example-toolbar">
@@ -28,8 +28,8 @@
           <a mat-list-item routerLink="/dashboard/notes" ><img class="sideicon" src="../../../assets/emoji_objects_black_24dp.svg">Notes</a>
           <a mat-list-item routerLink="." ><img class="sideicon" src="../../../assets/notifications_black_24dp.svg">Reminder</a>
           <a mat-list-item routerLink="." ><img class="sideicon ireduce" src="../../../assets/edit_FILL0_wght400_GRAD0_opsz48.svg">Edit labels</a>
-          <a mat-list-item routerLink="." ><img class="sideicon ireduce" src="../../../assets/archive_black_24dp.svg">Archive</a>
-          <a mat-list-item routerLink="." ><img class="sideicon ireduce" src="../../../assets/delete_FILL0_wght400_GRAD0_opsz48.svg">Trash</a>
+          <a mat-list-item routerLink="/dashboard/archive" ><img class="sideicon ireduce" src="../../../assets/archive_black_24dp.svg">Archive</a>
+          <a mat-list-item routerLink="/dashboard/trash" ><img class="sideicon ireduce" src="../../../assets/delete_FILL0_wght400_GRAD0_opsz48.svg">Trash</a>
         </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content>
@@ -37,15 +37,7 @@
       </mat-sidenav-content>
     </mat-sidenav-container>
   </div>
-  <!-- <div fxLayout="row" fxLayoutAlign="start start">
-    
-  </div> -->
+
 </div>
 </div>
 
-
-
-<!-- vNityashree C9:32 AM
-import { FormsModule } from '@angular/forms';
-Nityashree C9:36 AM
-localstorage.setItem('token',res.is) -->

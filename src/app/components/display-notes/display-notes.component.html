@@ -1,22 +1,20 @@
-<div>
-    <div class="form" fxLayout="column" fxLayoutAlign="center center" *ngFor="let note of childMessage">
-        <div class="getallnote" fxLayout="row" fxLayoutAlign="center center">
-            <div class="form-element">
-                <div class="iform">
+<div class="main" fxLayout="row wrap">
+    <div class="note" *ngFor="let note of childMessage">
+        <div class="note-element">
+            <div class="iform" (click)="openDialog(note)">
+                <div class="ititle" fxLayout="row" fxLayoutAlign="space-between start">
                     <input type="text" placeholder="{{note.title}}">
                     <div class="pinicon">
-                        <!-- <img src="../../../assets/push_pin_.svg"> -->
-                    </div>
-                    <input class="takenote" type="text" placeholder="{{note.description}}">
-                    
+                        <img src="../../../assets/push_pin_.svg">
+                    </div> 
                 </div>
-                <div class="iconbar" fxLayout="row" fxLayoutAlign="space-between end">
-                    <div class="icontainer">
-                        <app-icons></app-icons>
-                    </div>
+                <input type="text" placeholder="{{note.description}}">
+            </div>
+            <div class="iconbar" fxLayout="row" fxLayoutAlign="space-around center">
+                <div class="icontainer" (click)="onclick(note.id)">
+                    <app-icons [childmessage]="noteId"></app-icons>
                 </div>
             </div>
         </div>
-        
     </div>
 </div>

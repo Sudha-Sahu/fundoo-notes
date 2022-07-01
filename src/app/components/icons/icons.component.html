@@ -1,10 +1,24 @@
-<div class="noteicon" fxLayout="row" fxLayoutAlign="space-around start">
+<div fxLayout="row" fxLayoutAlign="space-between center">
     <img class="icons" src="../../../assets/add_alert_black_24dp.svg">
     <img class="icons" src="../../../assets/person_add_alt_black_24dp.svg">
-    <img class="icons" src="../../../assets/palette_black_24dp.svg">
+    <img class="icons" src="../../../assets/palette_black_24dp.svg" [matMenuTriggerFor]="color">
     <img class="icons" src="../../../assets/image_black_24dp.svg">
-    <img class="icons" src="../../../assets/archive_black_24dp.svg">
-    <img class="icons" src="../../../assets/more_vert_black_24dp.svg"> 
+    <img class="icons" src="../../../assets/archive_black_24dp.svg" (click)="archNote()">
+    <img class="icons" src="../../../assets/more_vert_black_24dp.svg" [matMenuTriggerFor]="menu"> 
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="delNote()">Delete note</button>
+            <button mat-menu-item>Change labels</button>
+            <button mat-menu-item>Add drawing</button>
+            <button mat-menu-item>Make a copy</button>
+            <button mat-menu-item>Copy to Google docs</button>
+        </mat-menu>
+        <mat-menu #color="matMenu">
+            <div class="icolor" fxLayout="row wrap">
+                <div class="notecolor" *ngFor="let col of colorPalette()">
+                    <button class="circlebutton">{{col.id}}</button>
+                </div>
+            </div>
+        </mat-menu>
     <!-- <img class="icons" src="../../../assets/undo_black_24dp.svg"> 
     <img class="icons" src="../../../assets/redo_black_24dp.svg">  -->
 </div>

@@ -26,6 +26,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
 import { TrashComponent } from './components/trash/trash.component';
 import { ArchiveComponent } from './components/archive/archive.component';
+import { UpdateComponent } from './components/update/update.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,8 @@ import { ArchiveComponent } from './components/archive/archive.component';
     GetAllNotesComponent,
     DisplayNotesComponent,
     TrashComponent,
-    ArchiveComponent
+    ArchiveComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,8 @@ import { ArchiveComponent } from './components/archive/archive.component';
     MatButtonModule,
     MatCheckboxModule,
     ReactiveFormsModule, HttpClientModule,
-    MatSidenavModule, MatListModule, MatIconModule, MatToolbarModule, FormsModule
+    MatSidenavModule, MatListModule, MatIconModule, MatToolbarModule, FormsModule,
+    MatDialogModule, MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
