@@ -4,7 +4,7 @@
             <div class="iform" *ngIf="showNote">
                 <input type="text" placeholder="Title" [(ngModel)]="title">
             </div>
-            <div class="iform" >
+            <div class="iform">
                 <input class="takenote" type="text" placeholder="Take a note..." [(ngModel)]="desc" (click)="show()">
                 <div fxLayout="row" *ngIf="showIcon">
                     <img class="inote mnote" src="../../../assets/check_box_FILL0_wght400_GRAD0_opsz48.svg">
