@@ -76,6 +76,15 @@ export class NoteService {
     }
     return this.http.postService('notes/archiveNotes', data, true, header)
   }
+  colorNote(data:any){
+    let header={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.http.postService('notes/changesColorNotes', data, true, header)
+  }
   getArchiveNote(){
     let header={
       headers: new HttpHeaders({
