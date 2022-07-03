@@ -11,7 +11,7 @@
                 <input type="text" placeholder="{{note.description}}">
             </div>
             <div class="iconbar" fxLayout="row" fxLayoutAlign="space-around center">
-                <div class="icontainer" (click)="onclick(note.id)">
+                <div class="icontainer" (click)="clickIcon(note.id)">
                     <app-icons [childmessage]="noteId"></app-icons>
                 </div>
             </div>

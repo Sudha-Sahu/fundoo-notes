@@ -18,11 +18,11 @@
     // align-items: center;
     // justify-content: start;
     width: 40px;
-    height: auto;
-    // background-color: aqua;
+    height: fit-content;
+    background-color: rgb(224, 226, 226);
 }
 .circlebutton{
-    border-radius: 15px;
+    border-radius: 18px;
     height: 38px;
     width: 38px;
     border: none;
@@ -31,4 +31,8 @@
     width: 162px;
     height: auto;
     // border: 1px solid yellow ;
+}
+.colormenu{
+    border: 3px solid yellow ;
+    height: fit-content;
 }

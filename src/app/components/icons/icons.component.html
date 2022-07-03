@@ -12,10 +12,10 @@
             <button mat-menu-item>Make a copy</button>
             <button mat-menu-item>Copy to Google docs</button>
         </mat-menu>
-        <mat-menu #color="matMenu">
+        <mat-menu class="colormenu" #color="matMenu">
             <div class="icolor" fxLayout="row wrap">
                 <div class="notecolor" *ngFor="let col of colorPalette()">
-                    <button class="circlebutton">{{col.id}}</button>
+                    <button class="circlebutton" [style.background]=col.code (click)="color_note(col.code)"></button>
                 </div>
             </div>
         </mat-menu>

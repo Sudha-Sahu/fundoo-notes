@@ -30,8 +30,9 @@ export class DisplayNotesComponent implements OnInit {
       console.log(this.childMessage)
     });
   }
-  onclick(id:any){
+  clickIcon(id:any){
     this.noteId=id;
+    console.log(this.noteId)
   }
   
 }

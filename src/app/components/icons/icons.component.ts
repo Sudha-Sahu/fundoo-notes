@@ -36,21 +36,43 @@ export class IconsComponent implements OnInit {
   }
   colorPalette(){
     this.color_array=[
-      {name:"pink", id:1},
-      {name:"dd", id:2},
-      {name:"ss", id:3},
-      {name:"ss", id:4},
-      {name:"ss", id:5},
-      {name:"ss", id:6},
-      {name:"ss", id:7},
-      {name:"ss", id:8},
-      {name:"ss", id:9},
-      {name:"ss", id:10},
-      {name:"ss", id:11},
-      {name:"ss", id:12}
-
-    ]
+      { code: '#ffffff', name: 'white' },
+      { code: '#FF6347', name: 'red' },
+      { code: '#FF4500', name: 'orange' },
+      { code: '#FFFF00', name: 'yellow' },
+      { code: '#ADFF2F', name: 'green' },
+      { code: '#43C6DB', name: 'teal' },
+      { code: '#728FCE', name: 'Blue' },
+      { code: '#2B65EC', name: 'darkblue' },
+      { code: '#D16587', name: 'purple' },
+      { code: '#F9A7B0', name: 'pink' },
+      { code: '#E2A76F', name: 'brown' },
+      { code: '#D3D3D3', name: 'grey'}]
     return this.color_array
   }
+    // colors: Array<any> = [
+    //   { code: '#ffffff', name: 'white' },
+    //   { code: '#FF6347', name: 'red' },
+    //   { code: '#FF4500', name: 'orange' },
+    //   { code: '#FFFF00', name: 'yellow' },
+    //   { code: '#ADFF2F', name: 'green' },
+    //   { code: '#43C6DB', name: 'teal' },
+    //   { code: '#728FCE', name: 'Blue' },
+    //   { code: '#2B65EC', name: 'darkblue' },
+    //   { code: '#D16587', name: 'purple' },
+    //   { code: '#F9A7B0', name: 'pink' },
+    //   { code: '#E2A76F', name: 'brown' },
+    //   { code: '#D3D3D3', name: 'grey'}
+    // ]
+    color_note(data:any){
+      console.log(data)
+      let req={
+        noteIdList: [this.childmessage],
+        color: data
+      }
+      this.note.colorNote(req).subscribe((result:any)=>{
+        console.log(result)
+      })
+    }
 }
  
