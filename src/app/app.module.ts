@@ -29,6 +29,8 @@ import { ArchiveComponent } from './components/archive/archive.component';
 import { UpdateComponent } from './components/update/update.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
+import { DemoComponent } from './demo/demo.component';
+import { ColorComponent } from './color/color.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import {MatMenuModule} from '@angular/material/menu';
     DisplayNotesComponent,
     TrashComponent,
     ArchiveComponent,
-    UpdateComponent
+    UpdateComponent,
+    DemoComponent,
+    ColorComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.c
 import { IconsComponent } from './components/icons/icons.component';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { TrashComponent } from './components/trash/trash.component';
+import { ColorComponent } from './color/color.component';
 
 const routes: Routes = [
   {path: 'signup', component:SignupComponent},
@@ -25,7 +26,7 @@ const routes: Routes = [
     ]
 },
 // {path: 'icon', component:IconsComponent},
-// {path: 'getallnote', component:GetAllNotesComponent}
+{path: 'color', component:ColorComponent}
 
 ];
 
