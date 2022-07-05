@@ -103,4 +103,15 @@ export class NoteService {
     }
     return this.http.getService('notes/getTrashNotesList', true, header)
   }
+  deleteForeverNote(data:any){
+    console.log(this.token);
+
+    let header={
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.http.postService('notes/deleteForeverNotes',data, true, header)
+  }
 }

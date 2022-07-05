@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-demo',
@@ -7,9 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DemoComponent implements OnInit {
 @Input() childmessage:any;
-  constructor() { }
-
+  
   ngOnInit(): void {
+  }
+  constructor(private _snackBar: MatSnackBar) {}
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action);
   }
 
 }

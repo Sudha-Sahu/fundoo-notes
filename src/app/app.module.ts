@@ -31,6 +31,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
 import { DemoComponent } from './demo/demo.component';
 import { ColorComponent } from './color/color.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,7 @@ import { ColorComponent } from './color/color.component';
     MatCheckboxModule,
     ReactiveFormsModule, HttpClientModule,
     MatSidenavModule, MatListModule, MatIconModule, MatToolbarModule, FormsModule,
-    MatDialogModule, MatMenuModule
+    MatDialogModule, MatMenuModule, MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,6 +13,7 @@ import { ArchiveComponent } from './components/archive/archive.component';
 import { TrashComponent } from './components/trash/trash.component';
 import { ColorComponent } from './color/color.component';
 
+
 const routes: Routes = [
   {path: 'signup', component:SignupComponent},
   {path: 'signin', component:SigninComponent},
