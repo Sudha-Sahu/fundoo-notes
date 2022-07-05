@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/userservice/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -10,7 +11,7 @@ import { UserService } from 'src/app/services/userservice/user.service';
 export class SigninComponent implements OnInit {
   loginForm !: FormGroup;
 
-  constructor(private fb:FormBuilder, private user:UserService) { }
+  constructor(private fb:FormBuilder, private user:UserService, private router:Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -28,7 +29,8 @@ export class SigninComponent implements OnInit {
         service: this.loginForm.value.service
       }
       this.user.login(data).subscribe((result:any)=>{console.log(result);
-      localStorage.setItem('token', result.id)
+      localStorage.setItem('token', result.id);
+      this.router.navigateByUrl('/dashboard/notes');
       })
     }
     else{

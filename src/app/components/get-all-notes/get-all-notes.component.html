@@ -1,5 +1,5 @@
 
-<app-createnote></app-createnote>
+<app-createnote (messageEvent)="receiveMessage($event)"></app-createnote>
 
-<app-display-notes [childMessage]="filernote"></app-display-notes>
+<app-display-notes [childMessage]="filternote" (messageEvent)="receiveMessage($event)"></app-display-notes>
 

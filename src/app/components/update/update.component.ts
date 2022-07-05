@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { NoteService } from 'src/app/services/noteservice/note.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-update',
@@ -15,7 +16,8 @@ export class UpdateComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<UpdateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private note:NoteService
+    private note:NoteService,
+    private snackbar:MatSnackBar
   ) {}
 
   
@@ -34,7 +36,10 @@ export class UpdateComponent implements OnInit {
       title:this.title,
       description:this.desc
     }
-    this.note.updateNote(dataa).subscribe((notedata:any)=>{console.log(notedata);})
+    this.note.updateNote(dataa).subscribe((notedata:any)=>{
+      console.log(notedata);
+      this.snackbar.open("Note updated successfully", "", { duration: 3000 });
+    })
   }
 
 }

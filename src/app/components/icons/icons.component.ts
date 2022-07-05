@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NoteService } from 'src/app/services/noteservice/note.service';
+import { ActivatedRoute } from '@angular/router';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-icons',
@@ -9,9 +11,14 @@ import { NoteService } from 'src/app/services/noteservice/note.service';
 export class IconsComponent implements OnInit {
   @Input() childmessage: any;
   color_array:any=[];
-  constructor(private note:NoteService) { }
+  param:any;
+  @Output() messageEvent = new EventEmitter<any>();
+
+  constructor(private note:NoteService, private route: ActivatedRoute, private snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
+    this.param=this.route.snapshot.url[0].path;
+    // console.log(this.param)
   }
 
   delNote(){
@@ -22,7 +29,8 @@ export class IconsComponent implements OnInit {
     }
     this.note.deleteNote(req).subscribe((result:any)=>{
     console.log(result);
-
+    this.messageEvent.emit(result);
+    this.snackbar.open("Note trashed", "", { duration: 3000 });
   })
   }
   archNote(){
@@ -31,8 +39,46 @@ export class IconsComponent implements OnInit {
       isArchived: true,
     }
     this.note.archiveNote(req).subscribe((result:any)=>{
-      console.log(result)
+      console.log(result);
+      this.messageEvent.emit(result);
+      this.snackbar.open("Note archived", "", { duration: 3000 });
     })
+  }
+  restoreNote(){
+    console.log(this.childmessage)
+    let req = {
+        noteIdList: [this.childmessage],
+        isDeleted: false,
+    }
+    this.note.deleteNote(req).subscribe((result:any)=>{
+    console.log(result);
+    this.messageEvent.emit(result);
+    this.snackbar.open("Note restored from trash", "", { duration: 3000 });
+  })
+  }
+  unArchNote(){
+    let req={
+      noteIdList: [this.childmessage],
+      isArchived: false,
+    }
+    this.note.archiveNote(req).subscribe((result:any)=>{
+      console.log(result);
+      this.messageEvent.emit(result);
+      this.snackbar.open("Note unarchived", "", { duration: 3000 });
+    })
+  }
+  delForeverNote(){
+    console.log(this.childmessage)
+    let req = {
+        noteIdList: [this.childmessage],
+        isDeleted: true,
+    }
+    this.note.deleteForeverNote(req).subscribe((result:any)=>{
+    console.log(result);
+    this.messageEvent.emit(result);
+    this.snackbar.open("Note deleted successfully", "", { duration: 3000 });
+
+  })
   }
   colorPalette(){
     this.color_array=[
@@ -70,8 +116,12 @@ export class IconsComponent implements OnInit {
         noteIdList: [this.childmessage],
         color: data
       }
+      // this.param=this.route.snapshot.params;
+      // console.log(this.param)
       this.note.colorNote(req).subscribe((result:any)=>{
-        console.log(result)
+        console.log(result);
+        this.messageEvent.emit(result);
+        this.snackbar.open("Note color changed", "", { duration: 3000 });
       })
     }
 }

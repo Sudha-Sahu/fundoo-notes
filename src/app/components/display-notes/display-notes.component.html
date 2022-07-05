@@ -1,18 +1,20 @@
 <div class="main" fxLayout="row wrap">
     <div class="note" *ngFor="let note of childMessage">
-        <div class="note-element">
-            <div class="iform" (click)="openDialog(note)">
-                <div class="ititle" fxLayout="row" fxLayoutAlign="space-between start">
-                    <input type="text" placeholder="{{note.title}}">
-                    <div class="pinicon">
-                        <img src="../../../assets/push_pin_.svg">
-                    </div> 
+        <div class="notebox" [style.background]=note.color>
+            <div class="note-element">
+                <div class="iform" (click)="openDialog(note)">
+                    <div class="ititle" fxLayout="row" fxLayoutAlign="space-between start">
+                        <input type="text" placeholder="{{note.title}}">
+                        <div class="pinicon">
+                            <img src="../../../assets/push_pin_.svg">
+                        </div> 
+                    </div>
+                    <input type="text" placeholder="{{note.description}}">
                 </div>
-                <input type="text" placeholder="{{note.description}}">
-            </div>
-            <div class="iconbar" fxLayout="row" fxLayoutAlign="space-around center">
-                <div class="icontainer" (click)="clickIcon(note.id)">
-                    <app-icons [childmessage]="noteId"></app-icons>
+                <div class="iconbar" fxLayout="row" fxLayoutAlign="space-around center">
+                    <div class="icontainer" (click)="note.id">
+                        <app-icons [childmessage]="note.id" (messageEvent)="updateMessage($event)"></app-icons>
+                    </div>
                 </div>
             </div>
         </div>

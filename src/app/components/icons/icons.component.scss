@@ -8,15 +8,11 @@
     margin-top: 8px;
 }
 .icons:hover{
-    background-color: rgba(224, 221, 223, 0.995);
+    background-color: rgba(224, 223, 221, 0.995);
     border-radius: 25px;
     cursor: pointer;
 }
 .notecolor{
-    // display: flex;
-    // flex-direction: row wrap;
-    // align-items: center;
-    // justify-content: start;
     width: 40px;
     height: fit-content;
     background-color: rgb(224, 226, 226);
@@ -28,11 +24,30 @@
     border: none;
 }
 .icolor{
-    width: 162px;
-    height: auto;
+    width: 170px;
+    margin-left: 10px;
     // border: 1px solid yellow ;
 }
-.colormenu{
-    border: 3px solid yellow ;
-    height: fit-content;
+
+.ticons{
+    width: 19px;
+    height: 18px;
+    margin-left: 6px;
+    margin-top: 8px;
+}
+.ticons:hover{
+    background-color: rgba(224, 221, 223, 0.995);
+    border-radius: 25px;
+    cursor: pointer;
+}
+.ficons{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    margin-left: 10px;
+}
+.aa{
+    // background-color: purple;
+    width: 200px;
 }

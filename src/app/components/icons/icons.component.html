@@ -1,10 +1,15 @@
 <div fxLayout="row" fxLayoutAlign="space-between center">
-    <img class="icons" src="../../../assets/add_alert_black_24dp.svg">
-    <img class="icons" src="../../../assets/person_add_alt_black_24dp.svg">
-    <img class="icons" src="../../../assets/palette_black_24dp.svg" [matMenuTriggerFor]="color">
-    <img class="icons" src="../../../assets/image_black_24dp.svg">
-    <img class="icons" src="../../../assets/archive_black_24dp.svg" (click)="archNote()">
-    <img class="icons" src="../../../assets/more_vert_black_24dp.svg" [matMenuTriggerFor]="menu"> 
+    <img *ngIf="param != 'trash'" class="icons" src="../../../assets/add_alert_black_24dp.svg">
+    <img *ngIf="param != 'trash'" class="icons" src="../../../assets/person_add_alt_black_24dp.svg">
+    <img *ngIf="param != 'trash'" class="icons" src="../../../assets/palette_black_24dp.svg" [matMenuTriggerFor]="color">
+    <img *ngIf="param != 'trash'" class="icons" src="../../../assets/image_black_24dp.svg">
+    <img *ngIf="param != 'trash' && param!= 'archive'" class="icons" src="../../../assets/archive_black_24dp.svg" (click)="archNote()">
+    <img *ngIf="param != 'trash' && param == 'archive'" class="ticons" src="../../../assets/unarchive_FILL0_wght400_GRAD0_opsz48.svg" (click)="unArchNote()">
+    <div *ngIf="param == 'trash'" class="aa" fxLayout="row" fxLayoutAlign="start start">
+        <img class="ticons" src="../../../assets/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" (click)="delForeverNote()">
+        <img class="ticons" src="../../../assets/restore_from_trash_FILL0_wght400_GRAD0_opsz48.svg" (click)="restoreNote()">
+    </div>
+    <img *ngIf="param != 'trash'" class="icons" src="../../../assets/more_vert_black_24dp.svg" [matMenuTriggerFor]="menu"> 
         <mat-menu #menu="matMenu">
             <button mat-menu-item (click)="delNote()">Delete note</button>
             <button mat-menu-item>Change labels</button>
@@ -22,4 +27,3 @@
     <!-- <img class="icons" src="../../../assets/undo_black_24dp.svg"> 
     <img class="icons" src="../../../assets/redo_black_24dp.svg">  -->
 </div>
-
