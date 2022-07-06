@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Output, EventEmitter } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { NoteService } from 'src/app/services/noteservice/note.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
@@ -11,7 +11,9 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class UpdateComponent implements OnInit {
   title:any;
   desc:any;
-
+  ncolor:any;
+  // noteId:any
+  @Output() messageEvent = new EventEmitter<any>();
 
   constructor(
     public dialogRef: MatDialogRef<UpdateComponent>,
@@ -25,6 +27,7 @@ export class UpdateComponent implements OnInit {
     console.log(this.data)
     this.title=this.data.title;
     this.desc=this.data.description;
+    this.ncolor=this.data.color;
     console.log(this.title, this.desc, this.data.id)
   }
   
@@ -40,6 +43,11 @@ export class UpdateComponent implements OnInit {
       console.log(notedata);
       this.snackbar.open("Note updated successfully", "", { duration: 3000 });
     })
+  }
+  updateMessage(e:any) {
+    console.log(e);
+    this.ncolor=e;
+    // this.messageEvent.emit(e)
   }
 
 }

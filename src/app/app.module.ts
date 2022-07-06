@@ -32,6 +32,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import { DemoComponent } from './demo/demo.component';
 import { ColorComponent } from './color/color.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { AuthguardService } from './services/authguardservice/authguard.service';
+import { FilternotePipe } from './filterpipe/filternote.pipe';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     ArchiveComponent,
     UpdateComponent,
     DemoComponent,
-    ColorComponent
+    ColorComponent,
+    FilternotePipe
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatSidenavModule, MatListModule, MatIconModule, MatToolbarModule, FormsModule,
     MatDialogModule, MatMenuModule, MatSnackBarModule
   ],
-  providers: [],
+  providers: [AuthguardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

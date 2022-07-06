@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, OnDestroy} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DataService } from 'src/app/services/dataservice/data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,8 +11,14 @@ import {ChangeDetectorRef, OnDestroy} from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  param:any;
+  filtertitle:string='';
+  
 
   ngOnInit(): void {
+    this.param=this.route.snapshot.url[0].path;
+    console.log(this.param);
+    this.data.currentMessage.subscribe(message => this.filtertitle = message)
   }
 
   mobileQuery: MediaQueryList;
@@ -28,7 +37,7 @@ export class DashboardComponent implements OnInit {
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(private data:DataService, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private route: ActivatedRoute) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -36,6 +45,10 @@ export class DashboardComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
+    // this.subscription.unsubscribe();
+  }
+  searchKey(event:any){
+
   }
 
 }

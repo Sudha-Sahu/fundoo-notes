@@ -12,14 +12,16 @@ import { IconsComponent } from './components/icons/icons.component';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { TrashComponent } from './components/trash/trash.component';
 import { ColorComponent } from './color/color.component';
+import { AuthGuardGuard } from './authgaurd/auth-guard.guard';
 
 
 const routes: Routes = [
   {path: 'signup', component:SignupComponent},
+  {path: '', redirectTo:"/signin", pathMatch: 'full'},
   {path: 'signin', component:SigninComponent},
   {path: 'resetpassword/:token', component:ResetpasswordComponent},
   {path: 'forgetpass', component:ForgetpasswordComponent},
-  {path: 'dashboard', component:DashboardComponent,
+  {path: 'dashboard', component:DashboardComponent,canActivate:[AuthGuardGuard],
     children: [
       {path: 'notes', component:GetAllNotesComponent},
       {path: 'archive', component:ArchiveComponent},

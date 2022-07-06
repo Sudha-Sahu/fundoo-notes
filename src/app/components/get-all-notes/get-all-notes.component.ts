@@ -29,9 +29,5 @@ export class GetAllNotesComponent implements OnInit {
     console.log(event);
     this.getAllNotes();
   }
-  // updateMessage(e:any) {
-  //   console.log(e);
-  //   this.getAllNotes();
-  // }
   
 }

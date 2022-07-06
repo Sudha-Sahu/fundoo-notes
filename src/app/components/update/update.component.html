@@ -1,16 +1,21 @@
-<div fxLayout="column" fxLayoutAlign="space-between start">
-    <div class="notebox" fxLayout="column" fxLayoutAlign="space-around start">
-        <input type="text" placeholder="" [(ngModel)]="title">
-                <!-- <div class="pinicon">
+<div class="updatebox" [style.background]="ncolor">
+    <div fxLayout="column" fxLayoutAlign="space-between start">
+        <div class="notebox" fxLayout="column" fxLayoutAlign="space-around start">
+            <div class="noteinput" fxLayout="row" fxLayoutAlign="space-around start">
+                <input type="text" placeholder="" [(ngModel)]="title">
+                <div class="pinicon">
                     <img src="../../../assets/push_pin_.svg">
-                </div> -->
-        <input type="text" placeholder="" [(ngModel)]="desc">
-    </div>
-        
-    <div class="iconbar" fxLayout="row" fxLayoutAlign="space-between center">
-        <div class="icontainer">
-            <app-icons></app-icons>
+                </div> 
+            </div>
+            
+            <input type="text" placeholder="" [(ngModel)]="desc">
         </div>
-        <button mat-button (click)="onNoClick()">Close</button>
+            
+        <div class="iconbar" fxLayout="row" fxLayoutAlign="space-between center">
+            <div class="icontainer">
+                <app-icons  [childmessage]="data.id" (messageEvent)="updateMessage($event)"></app-icons>
+            </div>
+            <button mat-button (click)="onNoClick()">Close</button>
+        </div>
     </div>
 </div>

@@ -3,6 +3,9 @@
         <div class="form-element">
             <div class="iform" *ngIf="showNote">
                 <input type="text" placeholder="Title" [(ngModel)]="title">
+                <div class="pinicon">
+                    <img src="../../../assets/push_pin_.svg">
+                </div> 
             </div>
             <div class="iform">
                 <input class="takenote" type="text" placeholder="Take a note..." [(ngModel)]="desc" (click)="show()">

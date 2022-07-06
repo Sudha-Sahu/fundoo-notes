@@ -18,7 +18,6 @@ export class IconsComponent implements OnInit {
 
   ngOnInit(): void {
     this.param=this.route.snapshot.url[0].path;
-    // console.log(this.param)
   }
 
   delNote(){
@@ -116,11 +115,9 @@ export class IconsComponent implements OnInit {
         noteIdList: [this.childmessage],
         color: data
       }
-      // this.param=this.route.snapshot.params;
-      // console.log(this.param)
       this.note.colorNote(req).subscribe((result:any)=>{
         console.log(result);
-        this.messageEvent.emit(result);
+        this.messageEvent.emit(data);
         this.snackbar.open("Note color changed", "", { duration: 3000 });
       })
     }
