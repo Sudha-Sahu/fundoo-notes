@@ -12,11 +12,11 @@
       </div>
       <div fxLayout="row" fxLayoutAlign="end center">
         <img class="irefresh" src="../../../assets/refresh_black_24dp.svg">
-        <img class="iview" src="../../../assets/view_stream_black_24dp.svg">
-        <!-- <img *ngIf="param != 'trash'" class="iview" src="../../../assets/grid_view_FILL0_wght400_GRAD0_opsz48.svg"> -->
+        <img *ngIf="grid" (click)="gridView()" class="iview" src="../../../assets/view_stream_black_24dp.svg">
+        <img *ngIf="!grid" (click)="listView()" class="lview" src="../../../assets/grid_view_FILL0_wght400_GRAD0_opsz48.svg">
         <img class="isetting" src="../../../assets/settings_FILL0_wght400_GRAD0_opsz48.svg">
         <img class="iapps" src="../../../assets/apps_FILL0_wght400_GRAD0_opsz48.svg">
-        <img class="iaccount" src="../../../assets/account_circle_FILL0_wght400_GRAD0_opsz48.svg">
+        <img class="iaccount" src="../../../assets/account_circle_FILL0_wght400_GRAD0_opsz48.svg" (click)="logout()">
       </div>
     </mat-toolbar>
   

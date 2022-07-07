@@ -1,18 +1,41 @@
-<div class="main" fxLayout="row wrap">
-    <div class="note" *ngFor="let note of childMessage">
+<div *ngIf="isview" class="main" fxLayout="row wrap">
+    <div class="note" *ngFor="let note of childMessage | filternote: filterString">
         <div class="notebox" [style.background]=note.color>
             <div class="note-element">
                 <div class="iform" (click)="openDialog(note)">
                     <div class="ititle" fxLayout="row" fxLayoutAlign="space-between start">
-                        <input type="text" placeholder="{{note.title}}">
+                        <input placeholder="{{note.title}}">
                         <div class="pinicon">
+                            <img src="../../../assets/push_pin_.svg">
+                        </div> 
+                    </div>
+                    <input placeholder="{{note.description}}">
+                </div>
+                <div class="iconbar" fxLayout="row" fxLayoutAlign="space-around center">
+                    <div class="icontainer" (click)="note.id">
+                        <app-icons [childmessage]="note.id" (messageEvent)="updateMessage($event)"></app-icons>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!isview" class="listmain" fxLayout="column" fxLayoutAlign="space-between center">
+    <div class="listnote" *ngFor="let note of childMessage | filternote: filterString">
+        <div class="notebox1" [style.background]=note.color>
+            <div class="note-element1">
+                <div class="iform1" (click)="openDialog(note)">
+                    <div class="ititle1" fxLayout="row" fxLayoutAlign="space-between start">
+                        <input type="text" placeholder="{{note.title}}">
+                        <div class="pinicon1">
                             <img src="../../../assets/push_pin_.svg">
                         </div> 
                     </div>
                     <input type="text" placeholder="{{note.description}}">
                 </div>
-                <div class="iconbar" fxLayout="row" fxLayoutAlign="space-around center">
-                    <div class="icontainer" (click)="note.id">
+                <div class="iconbar1" fxLayout="row" fxLayoutAlign="space-around center">
+                    <div class="icontainer1" (click)="note.id">
                         <app-icons [childmessage]="note.id" (messageEvent)="updateMessage($event)"></app-icons>
                     </div>
                 </div>

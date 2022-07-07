@@ -1,5 +1,5 @@
 <div class="parent" fxLayout="row" fxLayoutAlign="center center" >
-    <div class="child" fxLayout="row" fxLayoutAlign="space-between center">
+    <div class="child" fxFlex.xl=40 fxFlex.lg=40 fxFlex.md=70 fxFlex.sm=80 fxFlex.xs=80 fxLayout="row" fxLayoutAlign="space-between center">
         <div class="child1">
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
             <div>
@@ -13,8 +13,8 @@
                 </h1>
                 <h1>Create your Fundoo Account</h1>
             </div>
-            <div fxLayout="row" fxLayoutAlign="space-around center">
-                <div class="fname">
+            <div fxLayout="row" fxLayoutAlign="space-around center" fxFlex=50 fxFlex.sm=70 fxFlex.xs=100>
+                <div class="fname" ngClass.xs="fname-xs" ngClass.sm="fname-sm" ngClass.md="fname-md">
                     <mat-form-field appearance="outline">
                         <mat-label>First name</mat-label>
                         <input matInput placeholder="" formControlName="fname">
@@ -72,7 +72,7 @@
             </div>
         </form>
         </div>
-        <div class="imgdiv" fxLayout="column" fxLayoutAlign="space-between center" >
+        <div class="imgdiv" fxLayout="column" fxLayoutAlign="space-between center" fxHide.xs>
             <img style="width: 200px; height: 200px;" src="../../../assets/account.svg">
             <p>One account. All of Google working for you.</p>
         </div>

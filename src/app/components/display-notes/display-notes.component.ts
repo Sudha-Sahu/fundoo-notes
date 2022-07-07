@@ -14,12 +14,20 @@ export class DisplayNotesComponent implements OnInit {
   @Input() childMessage: any;
   noteId:any;
   @Output() messageEvent = new EventEmitter<any>();
-  constructor(private dialog:MatDialog, private note:NoteService, private data: DataService) { }
   filterString:string='';
+  isview:boolean=true;
   
+  constructor(private dialog:MatDialog, private note:NoteService, private data: DataService) { }
 
   ngOnInit(): void {
-    this.data.currentMessage.subscribe(message => this.filterString = message)
+    this.data.currentMessage.subscribe((message:any) => {
+      this.filterString = message;
+      console.log(this.filterString);
+    })
+    this.data.currentView.subscribe((nview:any) => {
+      this.isview = nview;
+      console.log(this.isview);
+    })
   }
   
   openDialog(note:any): void {

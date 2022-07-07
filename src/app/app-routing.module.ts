@@ -19,6 +19,7 @@ const routes: Routes = [
   {path: 'signup', component:SignupComponent},
   {path: '', redirectTo:"/signin", pathMatch: 'full'},
   {path: 'signin', component:SigninComponent},
+  // {path: 'resetpassword', component:ResetpasswordComponent},
   {path: 'resetpassword/:token', component:ResetpasswordComponent},
   {path: 'forgetpass', component:ForgetpasswordComponent},
   {path: 'dashboard', component:DashboardComponent,canActivate:[AuthGuardGuard],

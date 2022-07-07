@@ -99,3 +99,102 @@
     cursor: pointer;
 }
     
+.listmain{
+    margin-left: 50px;
+    margin-top: 50px;
+    width: 1300px;
+    // background-color: aqua;
+}
+
+.listnote{
+    // background-color: rgb(237, 165, 206);
+    border-radius: 8px;
+    border: 1px solid rgb(132, 130, 130);
+    width: 400px;
+    height: 120px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.notebox1{
+    margin-top: -10px;
+    // height: 120px;
+    // width: 220px;
+    border-radius: 8px;
+    // background-color: rgba(159, 218, 30, 0.932)
+}
+.note-element1{
+    // border: 1px;
+    width: 220px;
+    // margin-top: 30px;
+    border-radius: 8px;
+    height: 120px;
+    // background-color: rgba(251, 249, 249, 0.932)
+}
+.listnote:hover{
+    box-shadow: 2px 2px 3px rgba(167, 163, 163, 0.667);
+}
+.iform1{
+    width: 390px;
+    margin-left: 10px;
+    margin-top: 10px;
+    // background-color: rgba(238, 6, 6, 0.932)
+}   
+.iform1 > input{
+    font-family: 'Open Sans', sans-serif;
+    background: transparent;
+    font-size: medium;
+    width: 330px;
+    height: 35px;
+    border: none;
+    outline: none;
+    // margin-top: 10px;
+    // background-color: yellow;
+}
+.ititle1 > input{
+    font-family: 'Open Sans', sans-serif;
+    background: transparent;
+    font-size: medium;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    width: 300px;
+}
+.ititle1 > div{
+    margin-top: 5px;
+}
+.iconbar1{
+    width: 380px;
+    margin-top: 15px;
+    margin-left: 10px;
+    // background-color: aquamarine;
+}
+
+.icontainer1{
+    visibility: hidden;
+    // background-color: aqua;
+    width: 380px;
+}
+.note-element1:hover .icontainer1{
+    visibility: visible;
+}
+.pinicon1{
+    display: none;
+}
+.pinicon1 > img{
+    width: 20px;
+    height: 22px;
+    // margin-left: 80px;
+}
+.note-element1:hover .pinicon1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+}
+.pinicon1:hover{
+    background-color: rgba(224, 223, 221, 0.995);
+    cursor: pointer;
+}

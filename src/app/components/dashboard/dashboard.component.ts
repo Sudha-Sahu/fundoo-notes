@@ -4,6 +4,8 @@ import {ChangeDetectorRef, OnDestroy} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from 'src/app/services/dataservice/data.service';
 import { Subscription } from 'rxjs';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,13 +14,26 @@ import { Subscription } from 'rxjs';
 })
 export class DashboardComponent implements OnInit {
   param:any;
-  filtertitle:string='';
-  
+  filterString:string='';
+  grid:any=true;
 
   ngOnInit(): void {
-    this.param=this.route.snapshot.url[0].path;
-    console.log(this.param);
-    this.data.currentMessage.subscribe(message => this.filtertitle = message)
+    this.data.currentMessage.subscribe((message:any) => {
+      this.filterString = message;
+      console.log(this.filterString);
+    })
+    this.data.currentView.subscribe((nview:any) => {
+      this.grid = nview;
+      console.log(this.grid);
+    })
+  }
+  gridView(){
+    this.grid = false;
+    this.data.changeNotesView(this.grid);
+  }
+  listView(){
+    this.grid = true;
+    this.data.changeNotesView(this.grid);
   }
 
   mobileQuery: MediaQueryList;
@@ -37,7 +52,7 @@ export class DashboardComponent implements OnInit {
 
   private _mobileQueryListener: () => void;
 
-  constructor(private data:DataService, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private route: ActivatedRoute) {
+  constructor(private data:DataService, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private route: Router, private snackbar:MatSnackBar) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -47,8 +62,25 @@ export class DashboardComponent implements OnInit {
     this.mobileQuery.removeListener(this._mobileQueryListener);
     // this.subscription.unsubscribe();
   }
-  searchKey(event:any){
-
+  searchKey(text:any){
+    this.data.changeMessage(text.target.value);
   }
-
+  logout(){
+    localStorage.removeItem('token');
+    this.snackbar.open("Logged out", "", { duration: 3000 });
+    this.route.navigateByUrl('/signin');
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
