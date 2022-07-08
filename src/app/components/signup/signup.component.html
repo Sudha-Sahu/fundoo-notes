@@ -1,23 +1,23 @@
 <div class="parent" fxLayout="row" fxLayoutAlign="center center" >
-    <div class="child" fxFlex.xl=40 fxFlex.lg=40 fxFlex.md=70 fxFlex.sm=80 fxFlex.xs=80 fxLayout="row" fxLayoutAlign="space-between center">
-        <div class="child1">
+    <div class="child" ngClass.md="child-md" ngClass.sm="child-sm" ngClass.xs="child-xs" fxLayout="row" fxLayoutAlign="space-between center">
+        <div class="child1" ngClass.sm="child1-sm" ngClass.xs="child1-xs" fxLayout.xs="column" fxLayoutAlign.xs="space-around center">
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-            <div>
-                <h1>
+            <div class="fundoo">
+                <h2>
                     <font color="blue">F</font>
                     <font color="red">u</font>
                     <font color="#F4B400">n</font>
                     <font color="blue">d</font>
                     <font color="green">o</font>
                     <font color="red">o</font>
-                </h1>
+                </h2>
                 <h1>Create your Fundoo Account</h1>
             </div>
-            <div fxLayout="row" fxLayoutAlign="space-around center" fxFlex=50 fxFlex.sm=70 fxFlex.xs=100>
-                <div class="fname" ngClass.xs="fname-xs" ngClass.sm="fname-sm" ngClass.md="fname-md">
+            <div  fxLayout="row" fxLayoutAlign="space-around center">
+                <div class="fname" ngClass.sm="fname-sm" ngClass.md="fname-md">
                     <mat-form-field appearance="outline">
                         <mat-label>First name</mat-label>
-                        <input matInput placeholder="" formControlName="fname">
+                        <input matInput placeholder="" formControlName="fname" size="20px">
                         <mat-error>Enter first name</mat-error>
                     </mat-form-field>
                 </div>
@@ -42,10 +42,11 @@
                 <button mat-button color="primary">Use my current email address instead</button>
             </div>
             <div fxLayout="row" fxLayoutAlign="space-around center">
-                <div class="fname">
+                <div ngClass.sm="fname-sm" ngClass.md="fname-md">
                     <mat-form-field appearance="outline">
                         <mat-label>Password</mat-label>
-                        <input matInput placeholder="" formControlName="pass">
+                        <input matInput *ngIf="passtype" type=password placeholder="" formControlName="pass" >
+                        <input matInput *ngIf="!passtype" type=text placeholder="" formControlName="pass" >
                         <mat-error>Enter a password</mat-error>
                         <!-- <mat-hint>Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint> -->
                     </mat-form-field>
@@ -53,7 +54,8 @@
                 <div class="lname">
                     <mat-form-field appearance="outline">
                         <mat-label>Confirm</mat-label>
-                        <input matInput placeholder="" formControlName="cpass">
+                        <input matInput *ngIf="passtype" type=password placeholder="" formControlName="cpass">
+                        <input matInput *ngIf="!passtype" type=text placeholder="" formControlName="cpass">
                         <mat-error>Retype your entered password</mat-error>
                     </mat-form-field>
                 </div>  
@@ -64,7 +66,7 @@
                     <input type="checkbox" id="Password" name="Password" value="Password">
                     <label for="Password"> Show Password</label><br>
                 </form> -->
-                <mat-checkbox>Show Password</mat-checkbox>
+                <mat-checkbox (click)="clickCheck()">Show Password</mat-checkbox>
             </div>
             <div class="buttondiv"  fxLayout="row" fxLayoutAlign="space-between center" >
                 <button mat-button color="primary" routerLink="/signin">Sign in instead</button>
@@ -72,7 +74,7 @@
             </div>
         </form>
         </div>
-        <div class="imgdiv" fxLayout="column" fxLayoutAlign="space-between center" fxHide.xs>
+        <div class="imgdiv" ngClass.md="imgdiv-md" fxLayout="column" fxLayoutAlign="space-between center" fxHide.sm fxHide.xs>
             <img style="width: 200px; height: 200px;" src="../../../assets/account.svg">
             <p>One account. All of Google working for you.</p>
         </div>

@@ -1,12 +1,11 @@
-<div class="main">
-<div fxLayout="column" fxLayoutAlign="start start">
-  <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-    <mat-toolbar color="rgba(255,255,255,1)" class="example-toolbar">
+<div ngClSass.sm="main-sm">
+  <div class="example-container" ngClass.md="example-container-md" ngClass.sm="example-container-sm" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-toolbar color="rgba(255,255,255,1)" class="example-toolbar" ngClass.md="example-toolbar-md" ngClass.sm="example-toolbar-sm">
       <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
       <img class="image" src="../../../assets/keep_2020q4_48dp.png">
       <h2 class="example-app-name">Fundoo</h2>
       <div class="input-bar" fxLayout="row" fxLayoutAlign="end center">
-        <img class="searchicon" src="../../../assets/search_FILL0_wght400_GRAD0_opsz48.svg">
+        <img class="searchicon" src="../../../assets/search_FILL0_wght400_GRAD0_opsz48.svg" (keyup)="searchKey($event)">
         <input id="input-bar" type="text" placeholder="Search" (keyup)="searchKey($event)" >
         
       </div>
@@ -33,12 +32,12 @@
           <a mat-list-item routerLink="/dashboard/trash" ><img class="sideicon ireduce" src="../../../assets/delete_FILL0_wght400_GRAD0_opsz48.svg">Trash</a>
         </mat-nav-list>
       </mat-sidenav>
-      <mat-sidenav-content>
+      <mat-sidenav-content ngClass.md="sidenav-content-md" ngClass.sm="sidenav-content-sm">
           <router-outlet></router-outlet>
       </mat-sidenav-content>
     </mat-sidenav-container>
   </div>
 
 </div>
-</div>
+
 

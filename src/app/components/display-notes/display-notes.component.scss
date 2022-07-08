@@ -5,7 +5,7 @@
 .main{
     margin-left: 50px;
     margin-top: 50px;
-    width: 1300px;
+    width: 90%;
     // background-color: aqua;
 }
 
@@ -198,3 +198,9 @@
     background-color: rgba(224, 223, 221, 0.995);
     cursor: pointer;
 }
+
+::ng-deep .my-custom-dialog-class {
+    mat-dialog-container {
+      padding: 0;
+    }
+  }

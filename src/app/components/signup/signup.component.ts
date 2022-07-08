@@ -12,7 +12,7 @@ import { UserService } from 'src/app/services/userservice/user.service';
 })
 export class SignupComponent implements OnInit {
   registerForm !: FormGroup;
-
+  passtype:boolean=true;
   constructor(private fb:FormBuilder, private user:UserService) { 
 
   }
@@ -44,5 +44,11 @@ export class SignupComponent implements OnInit {
     else{
       console.log("Invalid data", this.registerForm.value);
     }
+  }
+  clickCheck(){
+    if (this.passtype)
+      this.passtype=false;
+    else
+      this.passtype=true;
   }
 }

@@ -32,8 +32,8 @@ export class DisplayNotesComponent implements OnInit {
   
   openDialog(note:any): void {
     const dialogRef = this.dialog.open(UpdateComponent, {
-      panelClass: 'app-full-bleed-dialog', 
-      // width: '500px',
+      panelClass: 'my-custom-dialog-class', 
+      width: '500px',
       data: note
     });
 

@@ -1,7 +1,7 @@
 
-// .parent{
-//     height: 100%;
-// }
+.parent{
+    height: 100%;
+}
 .child{
     height: 90%;
     width: 30%;
@@ -9,8 +9,11 @@
     border-radius: 6px;
    
 }
-.headtext{
-    margin-top: 40px;
+// .headtext{
+//     margin-top: 20px;
+// }
+h1{
+    font-weight: bold;
 }
 .mat-form-field{
     width: 350px;
@@ -40,4 +43,23 @@
 #createbutton{
     margin-left: -15px;
     margin-bottom: 5px;
+}
+.child-md{
+    height: 90%;
+    width: 50%;
+    // border: 1px solid rgb(211, 13, 13);
+    border-radius: 6px;
+   
+}
+.child-sm{
+    height: 90%;
+    width: 70%;
+    // border: 1px solid rgb(211, 13, 13);
+    border-radius: 6px;
+}
+.child-xs{
+    height: 90%;
+    width: 90%;
+    border: none;
+    border-radius: 6px;
 }
