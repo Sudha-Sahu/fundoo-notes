@@ -33,7 +33,7 @@ export class DisplayNotesComponent implements OnInit {
   openDialog(note:any): void {
     const dialogRef = this.dialog.open(UpdateComponent, {
       panelClass: 'my-custom-dialog-class', 
-      width: '500px',
+      // width: '500px',
       data: note
     });
 
@@ -50,9 +50,7 @@ export class DisplayNotesComponent implements OnInit {
   ngOnDestroy() {
     // this.subscription.unsubscribe();
   }
-  newMessage() {
-    this.data.changeMessage("Hello from Sibling")
-  }
+  
 
 
 

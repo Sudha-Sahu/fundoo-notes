@@ -1,14 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {HttpClientModule} from '@angular/common/http';
 import { CreatenoteComponent } from './createnote.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
-describe('CreatenoteComponent', () => {
+fdescribe('CreatenoteComponent', () => {
   let component: CreatenoteComponent;
   let fixture: ComponentFixture<CreatenoteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreatenoteComponent ]
+      declarations: [ CreatenoteComponent ],
+      imports: [HttpClientModule, MatSnackBarModule]
     })
     .compileComponents();
   });
@@ -21,5 +23,9 @@ describe('CreatenoteComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+  it('close', () => {
+    component.close()
+    expect(component.close).toBeTruthy();
   });
 });

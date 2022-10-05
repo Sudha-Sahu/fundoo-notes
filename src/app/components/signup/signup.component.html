@@ -1,9 +1,9 @@
-<div class="parent" fxLayout="row" fxLayoutAlign="center center" >
+<div class="parent" ngClass.xs="parent-xs" fxLayout="row" fxLayoutAlign="center center">
     <div class="child" ngClass.md="child-md" ngClass.sm="child-sm" ngClass.xs="child-xs" fxLayout="row" fxLayoutAlign="space-between center">
-        <div class="child1" ngClass.sm="child1-sm" ngClass.xs="child1-xs" fxLayout.xs="column" fxLayoutAlign.xs="space-around center">
+        <div class="child1" ngClass.sm="child1-sm" ngClass.xs="child1-xs" fxLayout.xs="column" fxLayoutAlign.xs="center center">
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-            <div class="fundoo">
-                <h2>
+            <div class="fundoo" >
+                <h2 fxHide.xs>
                     <font color="blue">F</font>
                     <font color="red">u</font>
                     <font color="#F4B400">n</font>
@@ -13,15 +13,15 @@
                 </h2>
                 <h1>Create your Fundoo Account</h1>
             </div>
-            <div  fxLayout="row" fxLayoutAlign="space-around center">
-                <div class="fname" ngClass.sm="fname-sm" ngClass.md="fname-md">
+            <div  fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around center">
+                <div class="fname" ngClass.sm="fname-sm" ngClass.md="fname-md" ngClass.xs="fname-xs">
                     <mat-form-field appearance="outline">
                         <mat-label>First name</mat-label>
                         <input matInput placeholder="" formControlName="fname" size="20px">
                         <mat-error>Enter first name</mat-error>
                     </mat-form-field>
                 </div>
-                <div class="lname">
+                <div class="lname" ngClass.xs="lname-xs">
                     <mat-form-field appearance="outline">
                         <mat-label>Last name</mat-label>
                         <input matInput placeholder="" formControlName="lname">
@@ -30,7 +30,7 @@
                 </div>
                 
             </div>
-            <div class="uname">
+            <div class="uname" ngClass.xs="uname-xs">
                 <mat-form-field appearance="outline">
                     <mat-label>Email</mat-label>
                     <input matInput placeholder="username" formControlName="email">
@@ -41,17 +41,17 @@
             <div class="buttondiv">
                 <button mat-button color="primary">Use my current email address instead</button>
             </div>
-            <div fxLayout="row" fxLayoutAlign="space-around center">
-                <div ngClass.sm="fname-sm" ngClass.md="fname-md">
+            <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around center">
+                <div ngClass.sm="fname-sm" ngClass.md="fname-md" ngClass.xs="fname-xs">
                     <mat-form-field appearance="outline">
                         <mat-label>Password</mat-label>
                         <input matInput *ngIf="passtype" type=password placeholder="" formControlName="pass" >
                         <input matInput *ngIf="!passtype" type=text placeholder="" formControlName="pass" >
                         <mat-error>Enter a password</mat-error>
-                        <!-- <mat-hint>Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint> -->
+                        <mat-hint fxHide.sm fxHide.lg fxHide.md>Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint>
                     </mat-form-field>
                 </div>
-                <div class="lname">
+                <div class="lname" ngClass.xs="lname-xs">
                     <mat-form-field appearance="outline">
                         <mat-label>Confirm</mat-label>
                         <input matInput *ngIf="passtype" type=password placeholder="" formControlName="cpass">
@@ -60,7 +60,7 @@
                     </mat-form-field>
                 </div>  
             </div>
-            <mat-hint class="passtext">Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint>
+            <mat-hint class="passtext" fxHide.xs>Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint>
             <div>
                 <!-- <form>
                     <input type="checkbox" id="Password" name="Password" value="Password">

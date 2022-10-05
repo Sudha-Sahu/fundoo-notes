@@ -12,7 +12,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { SigninComponent } from './components/signin/signin.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CreatenoteComponent } from './components/createnote/createnote.component';
@@ -23,7 +22,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TrashComponent } from './components/trash/trash.component';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { UpdateComponent } from './components/update/update.component';
@@ -34,6 +33,7 @@ import { ColorComponent } from './color/color.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AuthguardService } from './services/authguardservice/authguard.service';
 import { FilternotePipe } from './filterpipe/filternote.pipe';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -56,7 +56,7 @@ import { FilternotePipe } from './filterpipe/filternote.pipe';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule, RouterModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,

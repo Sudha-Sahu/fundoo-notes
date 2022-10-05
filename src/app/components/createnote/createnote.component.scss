@@ -1,6 +1,6 @@
 
 .form{
-    background-color: #fff;
+    // background-color: rgb(220, 6, 6);
     font-family: 'Open Sans', sans-serif;
     border-radius: 6px;
     box-shadow: 0 3px 10px rgba(27, 26, 26, 0.667);
@@ -58,4 +58,13 @@
 }
 .mnote{
     margin-left: 25px;
+}
+.form-xs{
+    // background-color: rgb(220, 6, 6);
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(27, 26, 26, 0.667);
+    width: 85%;
+    margin-top: 20px;
+    margin-left: 30px;
 }

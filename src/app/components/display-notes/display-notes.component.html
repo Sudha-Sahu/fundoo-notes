@@ -1,6 +1,6 @@
 <div *ngIf="isview" class="main" fxLayout="row wrap">
-    <div class="note" *ngFor="let note of childMessage | filternote: filterString">
-        <div class="notebox" [style.background]=note.color>
+    <div class="note" ngClass.xs="note-xs" *ngFor="let note of childMessage | filternote: filterString">
+        <div class="notebox" ngClass.xs="notebox-xs" [style.background]=note.color>
             <div class="note-element">
                 <div class="iform" (click)="openDialog(note)">
                     <div class="ititle" fxLayout="row" fxLayoutAlign="space-between start">

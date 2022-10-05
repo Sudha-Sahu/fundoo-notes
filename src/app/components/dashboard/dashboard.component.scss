@@ -64,9 +64,9 @@
     border: none;
     outline: none;
   }
-  #input-bar{
+  .search-bar{
     font-family: 'Open Sans', sans-serif;;
-    width: 90%;
+    width: 100%;
     height: 40px;
     border: none;
     outline: none;
@@ -135,20 +135,135 @@
     bottom: 0;
     left: 0;
     right: 0;
-    border: 3px solid rgb(130, 238, 159);
+    // border: 3px solid rgb(130, 238, 159);
     width: 100%;
     height: 200%;
   }
   .example-toolbar-sm{
     width: 100%;
-    border: 2px solid gold;
+    // border: 2px solid gold;
   }
-  .sidenav-content-sm{
-    // border: 2px red;
-    background-color: pink;
-    // width: 80% ;
-  }
+  // .sidenav-content-sm{
+  //   // border: 2px red;
+  //   background-color: pink;
+  //   // width: 80% ;
+  // }
   // .main-sm{
   //   width: 80%;
   //   border: 3px red;
   // }
+  .input-bar-sm{
+    width: 50%;
+    background-color: rgb(250, 250, 252);
+    // margin-left: 120px;
+    border-radius: 10px;
+    // height: 50px;
+  }
+  .search-bar-sm{
+    font-family: 'Open Sans', sans-serif;;
+    width: 100%;
+    // height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: rgb(250, 250, 252);
+    font-size: 20px;
+  }
+  .irefresh-sm{
+    margin-left: 20px;
+  }
+  .iview-sm{
+    margin-left: 20px;
+  }
+  .lview-sm{
+    margin-left: 20px;
+    width: 24px;
+    height: 24px;
+  }
+  .isetting-sm{
+    height: 25px;
+    width: 25px;
+    margin-left: 20px;
+  }
+  .iapps-sm{
+    height: 25px;
+    width: 25px;
+    margin-left: 20px;
+  }
+  .iaccount-sm{
+    height: 40px;
+    width: 40px;
+    margin-left: 15px;
+  }
+  .example-container-xs{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    // border: 3px solid rgb(130, 238, 159);
+    width: 100%;
+    height: 200%;
+  }
+  .example-toolbar-xs{
+    width: 100%;
+    // border: 2px solid gold;
+  }
+  // .sidenav-content-xs{
+  //   // border: 2px red;
+  //   // background-color: pink;
+  //   // width: 80% ;
+  // }
+
+  .input-bar-xs{
+    width: 0%;
+    // background-color: rgb(13, 13, 218);
+    // margin-left: 100px;
+    border-radius: 10px;
+    // height: 50px;
+  }
+  .search-bar-xs{
+    font-family: 'Open Sans', sans-serif;;
+    width: 100%;
+    // height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: rgb(250, 252, 250);
+    font-size: 20px;
+  }
+  .irefresh-xs{
+    margin-left: 0px;
+  }
+  .iview-xs{
+    margin-left: 20px;
+  }
+  .lview-xs{
+    margin-left: 20px;
+    width: 20px;
+    height: 20px;
+  }
+  .isetting-xs{
+    height: 20px;
+    width: 20px;
+    margin-left: 20px;
+  }
+  .iapps-xs{
+    height: 20px;
+    width: 20px;
+    margin-left: 20px;
+  }
+  .iaccount-xs{
+    height: 35px;
+    width: 35px;
+    margin-left: 15px;
+  }
+  .searchicon-xs{
+    // color: rgb(242, 242, 7);
+    height: 25px;
+    width: 25px;
+    margin-left: 150px;
+    // margin-right: 20px;
+  }
